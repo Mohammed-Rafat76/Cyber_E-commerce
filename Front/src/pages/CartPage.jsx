@@ -42,7 +42,7 @@ export default function CartPage() {
                       <p className="mr-6 font-normal text-2xl">${el.price}</p>
                       <TiDeleteOutline
                         onClick={() => removeFromCart(el.id)}
-                        className="w-[24px] h-[24px] cursor-pointer"
+                        className="w-6 h-6 cursor-pointer"
                       />
                     </div>
                     <div className="flex gap-2.5 justify-center items-center order-1 md:order-2 mr-6 md:mr-0">
@@ -97,14 +97,14 @@ export default function CartPage() {
                   type="text"
                   placeholder="Enter Card Number"
                 />
-                <button className=" p-4 h-full btn rounded-[6px] border border-[#000000] font-normal hover:bg-zinc-800/40 transition-all duration-150 easy-in-out">
+                <button className=" p-4 h-full btn rounded-md border border-[#000000] font-normal hover:bg-zinc-800/40 transition-all duration-150 easy-in-out">
                   Apply
                 </button>
               </div>
             </label>
 
             <div className="flex flex-col">
-              <h1 className="font-bold mb-[20px] text-[16px] text-[#000000]">
+              <h1 className="font-bold mb-5 text-[16px] text-[#000000]">
                 Subtotal
               </h1>
               {cartProduct.map((el) => {

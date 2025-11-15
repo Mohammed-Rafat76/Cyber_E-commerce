@@ -8,7 +8,7 @@ export default function RegisterPage() {
   const navigate = useNavigate();
   const handleSubmit = (values) => {
     
-    let endPoint = "/api/auth/send-email-confirmation";
+    let endPoint = "/api/auth/local/register";
     let url = domain + endPoint;
     let data = {
       username: values.username,
@@ -43,7 +43,7 @@ export default function RegisterPage() {
   });
 
   return (
-    <div className="w-full h-[100vh] bg-violet-400 flex items-center justify-center">
+    <div className="w-full h-screen bg-violet-400 flex items-center justify-center">
       <Formik
         validationSchema={initialschema}
         onSubmit={handleSubmit}
