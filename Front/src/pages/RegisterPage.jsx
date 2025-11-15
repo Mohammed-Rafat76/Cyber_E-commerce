@@ -8,7 +8,7 @@ export default function RegisterPage() {
   const navigate = useNavigate();
   const handleSubmit = (values) => {
     
-    let endPoint = "/api/auth/send-email-confirmation/register";
+    let endPoint = "/api/auth/send-email-confirmation";
     let url = domain + endPoint;
     let data = {
       username: values.username,
