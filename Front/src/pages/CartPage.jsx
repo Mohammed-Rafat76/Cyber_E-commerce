@@ -27,7 +27,7 @@ export default function CartPage() {
               >
                 <figure>
                   <img
-                    src={el.img ? domain + el.img.url : noImg}
+                    src={el.img ? el.img.url : noImg}
                     className="w-[150px] h-[100px] mr-4"
                   />
                 </figure>
