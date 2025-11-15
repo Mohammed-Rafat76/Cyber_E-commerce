@@ -11,6 +11,7 @@ export default function ProductView() {
   const [activePage , setActivePage] =useState([1])
   const [totalProduct , setTotalProduct]=useState([0])
   const [pageSize , setPageSize] = useState([3])
+   const [loaderIndex, setLoaderIndex] = useState(true);
   useEffect(() => {
     let endPoint = "/api/products?populate=*";
     let url = domain + endPoint;
@@ -51,6 +52,9 @@ export default function ProductView() {
           // setProduct(res.data.data)
           setView(res.data.data.products);
           console.log(res.data.data.product)
+          setTimeout(() => {
+          setLoaderIndex(false);
+        }, 2000);
         })
         .catch((err) => {
           console.log(err);
@@ -78,6 +82,7 @@ export default function ProductView() {
           <button disabled={activePage == Math.ceil(totalProduct / pageSize)? true : false} onClick={()=>{setActivePage(+activePage+1)}} className="join-item btn">»</button>
         </div>
       </div>
+      {loaderIndex && <Loader />}
     </div>
   );
 }
