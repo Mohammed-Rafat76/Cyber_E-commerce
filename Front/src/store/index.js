@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 // export let domain = "http://localhost:1337";
-export let domain = "https://refined-animal-a9eda0bb65.strapiapp.com";
+export let domain = "https://skilled-gem-4bc251e4a7.strapiapp.com";
 
 export const userCart = create((set) => ({
   value: [],
