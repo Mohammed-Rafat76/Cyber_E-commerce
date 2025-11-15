@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { domain, selectCats } from "../store/index";
 
+
 export default function ProductView() {
   const [product, setProduct] = useState([]);
   const { value } = selectCats();
@@ -52,9 +53,6 @@ export default function ProductView() {
           // setProduct(res.data.data)
           setView(res.data.data.products);
           console.log(res.data.data.product)
-          setTimeout(() => {
-          setLoaderIndex(false);
-        }, 2000);
         })
         .catch((err) => {
           console.log(err);
@@ -65,7 +63,7 @@ export default function ProductView() {
   }, [value]);
   return (
     <div className="w-full ">
-      <h1 className="text-[#6C6C6C] mb-[24px]">
+      <h1 className="text-[#6C6C6C] mb-6">
         Available Products: {totalProduct}
       </h1>
       <div className=" grow grid grid-cols-2 lg:grid-cols-3 gap-4 ">
@@ -82,7 +80,6 @@ export default function ProductView() {
           <button disabled={activePage == Math.ceil(totalProduct / pageSize)? true : false} onClick={()=>{setActivePage(+activePage+1)}} className="join-item btn">»</button>
         </div>
       </div>
-      {loaderIndex && <Loader />}
     </div>
   );
 }
